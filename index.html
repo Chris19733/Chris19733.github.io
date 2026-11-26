@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christian Adrian Da Rocha | Portfólio</title>
+  <style>
+    :root {
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --accent: #0284c7;
+      --accent-soft: #e0f2fe;
+      --border: #e2e8f0;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* Cabeçalho */
+    header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 3.5rem 0 3rem;
+      border-bottom: 4px solid var(--accent);
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: rgba(56, 189, 248, 0.15);
+      color: #38bdf8;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+      letter-spacing: 0.02em;
+    }
+
+    header h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .bio {
+      color: #cbd5e1;
+      font-size: 1.05rem;
+      max-width: 650px;
+    }
+
+    /* Conteúdo Principal */
+    main {
+      flex: 1;
+      padding: 3rem 0;
+    }
+
+    .project-header {
+      margin-bottom: 2rem;
+    }
+
+    .section-label {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 0.35rem;
+    }
+
+    .project-header h2 {
+      font-size: 1.65rem;
+      color: var(--text-main);
+      line-height: 1.3;
+    }
+
+    /* Grid dos 4 Blocos */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      color: var(--text-main);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .card-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      background-color: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 700;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.975rem;
+    }
+
+    /* Rodapé */
+    footer {
+      background-color: #ffffff;
+      border-top: 1px solid var(--border);
+      padding: 2.25rem 0;
+      margin-top: auto;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-title {
+      font-weight: 600;
+      color: var(--text-main);
+      font-size: 1rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--text-main);
+      background-color: var(--bg-color);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .contact-links a:hover {
+      background-color: var(--accent-soft);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Responsividade para Celular */
+    @media (max-width: 700px) {
+      header {
+        padding: 2.5rem 0 2.25rem;
+      }
+
+      header h1 {
+        font-size: 1.75rem;
+      }
+
+      .project-header h2 {
+        font-size: 1.35rem;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 1.15rem;
+      }
+
+      .card {
+        padding: 1.35rem;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .contact-links {
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .contact-links a {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="badge">Ciência de Dados • Fatec Adamantina</div>
+      <h1>Christian Adrian Da Rocha</h1>
+      <p class="bio">Sou estudante de Ciência de Dados, interessado em tecnologia, análise de dados e aprendizado de máquina.</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="project-header">
+        <div class="section-label">Projeto em Destaque</div>
+        <h2>Análise do Discurso com Técnicas de Machine Learning</h2>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3><span class="card-number">1</span>Problema</h3>
+          <p>Compreender como técnicas de Machine Learning podem auxiliar na análise de grandes volumes de textos, considerando também os aspectos ideológicos, sociais e contextuais da linguagem.</p>
+        </article>
+
+        <article class="card">
+          <h3><span class="card-number">2</span>O que eu fiz</h3>
+          <p>Realizei uma pesquisa sobre a integração entre Análise do Discurso e Machine Learning, analisando como essas áreas podem trabalhar juntas na interpretação de textos.</p>
+        </article>
+
+        <article class="card">
+          <h3><span class="card-number">3</span>Como eu fiz</h3>
+          <p>Foi realizada uma pesquisa bibliográfica, exploratória e qualitativa. Foram estudados conceitos de Análise do Discurso, Machine Learning e Processamento de Linguagem Natural, incluindo técnicas como tokenização, remoção de stopwords, normalização, Bag of Words, TF-IDF, Naive Bayes e redes neurais.</p>
+        </article>
+
+        <article class="card">
+          <h3><span class="card-number">4</span>Resultado</h3>
+          <p>O trabalho mostrou que o Machine Learning pode ajudar a processar grandes volumes de textos e identificar padrões, mas a interpretação crítica e o contexto da linguagem ainda dependem da análise humana.</p>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <span class="footer-title">Contatos</span>
+      <div class="contact-links">
+        <a href="mailto:christianrocha1212@gmail.com">christianrocha1212@gmail.com</a>
+        <a href="https://github.com/Chris19733" target="_blank" rel="noopener noreferrer">GitHub: Chris19733</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
